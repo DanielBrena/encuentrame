@@ -9,13 +9,17 @@ class Servicio extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('model_servicio');
+		//$this->load->model('model_servicio');
 		
 	}
 	
 	public function index()
 	{
 		
+	}
+
+	public function configuracion(){
+		$this->load->view('view_servicio_configuracion');
 	}
 
 	public function agregar_servicio(){

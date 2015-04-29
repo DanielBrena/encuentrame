@@ -42,7 +42,7 @@
               </section>
             </nav>
           </div>
-        </header>
+    </header>
         
       <div class="row">
         <div class="large-12 large-centered columns">
