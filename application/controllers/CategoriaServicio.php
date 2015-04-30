@@ -9,6 +9,5 @@ class CategoriaServicio extends CI_Controller {
 	}
 
 }
-
 /* End of file CategoriaServicio.php */
 /* Location: ./application/controllers/CategoriaServicio.php */

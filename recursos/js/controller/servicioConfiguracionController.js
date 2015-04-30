@@ -2,9 +2,6 @@
 app.controller("servicioConfiguracionController",function($scope){
 	$scope.servicio = {}
 	$scope.etiquetas = [];
-		
-	
-	
 
 	function cargar_mapa(){
 		var map;

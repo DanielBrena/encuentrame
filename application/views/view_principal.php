@@ -45,7 +45,7 @@
   </div>
   
   <div class="row" >
-      <div class="large-12 large-centered columns">
+      <div class="small-12 small-centered columns">
         <div data-magellan-expedition="fixed">
           <dl class="sub-nav" >
             <div ng-repeat="nav in sub_nav">

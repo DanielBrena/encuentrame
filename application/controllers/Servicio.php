@@ -18,8 +18,12 @@ class Servicio extends CI_Controller {
 		
 	}
 
-	public function configuracion(){
-		$this->load->view('view_servicio_configuracion');
+	public function informacion(){
+		$this->load->view('view_servicio_informacion');
+	}
+
+	public function productos(){
+		$this->load->view('view_servicio_producto');
 	}
 
 	public function agregar_servicio(){

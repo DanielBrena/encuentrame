@@ -44,8 +44,20 @@
             </nav>
           </div>
         </header>
+
+    <section >
     
-    <section class="contenido">
+      
+    <nav class="breadcrumbs ">
+      <a href="#"></a>
+      <a href="<?=base_url()?>servicio/informacion">Informacion</a>
+      <a href="<?=base_url()?>servicio/productos">Productos</a>
+      <a class="<?=base_url()?>servicio/estadisticas" href="#">Estadisticas</a>
+      
+    </nav>
+     
+    
+    
       
     </section>
     
@@ -77,7 +89,7 @@
 
               <div class="row">
                 <div class="small-12 columns">
-                    <label>Selecciona la categoria
+                    <label>Categoria
                           <select>
                             <option value="Cafeteria">Cafeteria</option>
                             <option value="Papeleria">Papeleria</option>
@@ -100,8 +112,6 @@
                   <div ng-repeat="e in etiquetas track by $index" class="small-4  columns etiqueta">
                   
                         <span ng-class-odd="'label success etiqueta'"  ng-class-even="'label etiqueta'" >{{e}}</span>
-                      
-                    
                     
                   </div>
                   
@@ -110,6 +120,8 @@
                 </div>
               </div>
 
+              <input type="submit" ng-disabled="form_registro.usuario.$invalid" class="button radius  expand" value="Registrarse">
+
                
 
             </form>
@@ -117,11 +129,32 @@
           </div>
       </div>
     </section>
-
-    <section ng-controller="servicioConfiguracionController" id="mapa">
+    
+    
+    <section >
+       <div class="row" >
+        <div ng-controller="servicioConfiguracionController" id="mapa"></div>
+       </div>
       
     </section>
 
+    <section >
+         <div id="search" class="large-12  columns">
+          <div  class="large-11 large-centered columns">
+            <div class="row collapse">
+              <div class="small-10 columns">
+                <input type="text" id="inp_search"  placeholder="Busca tú ubicación">
+              </div>
+              <div class="small-2 columns">
+                <a href="#"  id="btn_search" class="button secondary postfix fi-magnifying-glass size-72">
+                </a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+   
+  
     
    
     

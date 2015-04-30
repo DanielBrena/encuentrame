@@ -19,7 +19,6 @@
     <script src="<?=base_url()?>recursos/js/controller/administradorController.js"></script>
   </head>
   </body >
-
    <header>
           <div class="contain-to-grid sticky">
             <nav class="top-bar" data-topbar>

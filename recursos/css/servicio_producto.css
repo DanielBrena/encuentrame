@@ -1,0 +1,10 @@
+body{
+	background: #F1F2F2
+}
+.box_producto{
+	margin-top: 10px;
+	background: white;
+	height: 300px;
+	padding: 5px;
+	border: none;
+}
