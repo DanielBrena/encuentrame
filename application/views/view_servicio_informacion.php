@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="<?=base_url()?>recursos/css/foundation.css" />
     <link rel="stylesheet" href="<?=base_url()?>recursos/css/foundation-icons.css">
     <link rel="stylesheet" href="<?=base_url()?>recursos/css/servicio_configuracion.css">
+    <link rel="stylesheet" href="<?=base_url()?>recursos/css/nav.css">
+
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script src="<?=base_url()?>recursos/js/vendor/jquery.js"></script>
     <script src="<?=base_url()?>recursos/js/angular.js"></script>
@@ -23,17 +25,16 @@
 
    <header>
           <div class="contain-to-grid sticky">
-            <nav class="top-bar" data-topbar>
-              <ul class="title-area">
-                <li class="name">
-                  <h1><a href="<?=base_url()?>">Encuentrame</a></h1>
-                </li>
-                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-              </ul>
-          
-              <section class="top-bar-section">
-               
-                <ul class="right">
+        <nav class="top-bar" data-topbar>
+          <ul class="title-area">
+            <li class="name">
+              <h1><a id="titulo"href="<?php echo base_url(); ?>">Encuentrame</a></h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          </ul>
+              
+          <section class="top-bar-section">
+            <ul id="menu"class="right">
                   
                   <li class=""><a href="<?=base_url()?>principal/registro" class="button">Salir</a></li>
                   

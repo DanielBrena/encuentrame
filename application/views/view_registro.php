@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="<?=base_url()?>recursos/css/foundation.css" />
     <link rel="stylesheet" href="<?=base_url()?>recursos/css/foundation-icons.css">
     <link rel="stylesheet" href="<?=base_url()?>recursos/css/principal.css">
+    <link rel="stylesheet" href="<?=base_url()?>recursos/css/nav.css">
 
     <script src="<?=base_url()?>recursos/js/vendor/jquery.js"></script>
     <script src="<?=base_url()?>recursos/js/angular.js"></script>
@@ -21,27 +22,25 @@
   </body >
 
    <header>
-          <div class="contain-to-grid sticky">
-            <nav class="top-bar" data-topbar>
-              <ul class="title-area">
-                <li class="name">
-                  <h1><a href="<?=base_url()?>">Encuentrame</a></h1>
-                </li>
-                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-              </ul>
-          
-              <section class="top-bar-section">
-               
-                <ul class="right">
-                  <li class=""><a href="#" class="button">¿ Ya tienes una cuenta ?</a></li>
-                  <li class="active"><a href="<?=base_url()?>principal/acceder"  class="button success">Acceder</a></li>
-
-                  
-                </ul>
+      <div class="contain-to-grid sticky">
+        <nav class="top-bar" data-topbar>
+          <ul class="title-area">
+            <li class="name">
+              <h1><a id="titulo"href="<?php echo base_url(); ?>">Encuentrame</a></h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          </ul>
               
-              </section>
-            </nav>
-          </div>
+          <section class="top-bar-section">
+            <ul id="menu"class="right">
+             
+              <li class="active">
+                <a href="<?=base_url()?>principal/acceder"  class="button success">Acceder</a>
+              </li>
+            </ul>
+          </section>
+        </nav>
+      </div>
     </header>
         
       <div class="row">

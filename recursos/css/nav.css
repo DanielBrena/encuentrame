@@ -1,0 +1,13 @@
+
+.contain-to-grid{
+  border-bottom: 2px solid rgb(231, 231, 231);
+}
+.contain-to-grid, .top-bar{
+  background: white;
+}
+#menu li{
+  background: white;
+}
+#titulo {
+  color: #214055;;
+}

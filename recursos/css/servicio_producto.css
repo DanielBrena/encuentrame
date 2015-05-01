@@ -1,10 +1,39 @@
 body{
 	background: #F1F2F2
 }
+
+#inp_search{
+	color: #214055;
+}
+#btn_search{
+	background: #214055;
+	color: #FFF;
+	padding: .75em;
+}
+
+.img{
+	padding: 10px;
+}
+.img img{
+	width: 60%;
+
+}
 .box_producto{
-	margin-top: 10px;
-	background: white;
-	height: 300px;
-	padding: 5px;
+
+	background: #FFF;
+}
+.panel {
+	background: #FFF;
 	border: none;
+}
+.panel h5,.panel h3{
+	color:#214055;
+}
+
+.contenido{
+  margin-top: 10px;
+
+}
+#btn_agregar{
+	background: #214055;
 }

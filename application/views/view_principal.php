@@ -6,6 +6,7 @@
     <title>Encuentrame</title>
     <link rel="stylesheet" href="<?=base_url()?>recursos/css/foundation.css" />
     <link rel="stylesheet" href="<?=base_url()?>recursos/css/foundation-icons.css">
+     <link rel="stylesheet" href="<?=base_url()?>recursos/css/nav.css">
     <link rel="stylesheet" href="<?=base_url()?>recursos/css/principal.css">
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script src="<?=base_url()?>recursos/js/vendor/jquery.js"></script>
@@ -21,44 +22,44 @@
   </head>
 
   <body ng-controller="principalController">
-<header >
-  <div class="contain-to-grid sticky">
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="<?php echo base_url(); ?>">Encuentrame</a></h1>
-        </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-      </ul>
-          
-      <section class="top-bar-section">
-        <ul class="right">
-          <li class="">
-              <a href="<?=base_url()?>principal/registro" class="button">Registrate</a>
-          </li>
-          <li class="active">
-            <a href="<?=base_url()?>principal/acceder"  class="button success">Acceder</a>
-          </li>
-        </ul>
-      </section>
-    </nav>
-  </div>
-  
-  <div class="row" >
-      <div class="small-12 small-centered columns">
-        <div data-magellan-expedition="fixed">
-          <dl class="sub-nav" >
-            <div ng-repeat="nav in sub_nav">
-              <dd data-magellan-arrival="build"><a href="{{nav.url}}">{{nav.nombre}}</a></dd>
+    <header >
+      <div class="contain-to-grid sticky">
+        <nav class="top-bar" data-topbar>
+          <ul class="title-area">
+            <li class="name">
+              <h1><a id="titulo"href="<?php echo base_url(); ?>">Encuentrame</a></h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          </ul>
+              
+          <section class="top-bar-section">
+            <ul id="menu"class="right">
+              <li class="">
+                  <a href="<?=base_url()?>principal/registro" class="button">Registrate</a>
+              </li>
+              <li class="active">
+                <a href="<?=base_url()?>principal/acceder"  class="button success">Acceder</a>
+              </li>
+            </ul>
+          </section>
+        </nav>
+      </div>
+      
+      <div class="row" >
+          <div class="small-12 small-centered columns">
+            <div data-magellan-expedition="fixed">
+              <dl class="sub-nav" >
+                <div ng-repeat="nav in sub_nav">
+                  <dd data-magellan-arrival="build"><a href="{{nav.url}}">{{nav.nombre}}</a></dd>
+                </div>
+              </dl>
             </div>
-          </dl>
+
+          </div>
+
         </div>
 
-      </div>
-
-    </div>
-
-</header>
+    </header>
 
 <section class="contenido">
 
