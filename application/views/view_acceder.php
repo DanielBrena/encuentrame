@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="<?=base_url()?>recursos/css/nav.css">
 
     <script src="<?=base_url()?>recursos/js/vendor/jquery.js"></script>
-    <script src="<?=base_url()?>recursos/js/angular.js"></script>
+    <script src="<?=base_url()?>recursos/js/angular.js"></script> 
     <script src="<?=base_url()?>recursos/js/foundation.min.js"></script>
     <script src="<?=base_url()?>recursos/js/vendor/modernizr.js"></script>
     
     <script src="<?=base_url()?>recursos/js/principal.js"></script>
     <script src="<?=base_url()?>recursos/js/app.js"></script>
      <script src="<?=base_url()?>recursos/js/factory/factory.js"></script>
-    <script src="<?=base_url()?>recursos/js/controller/registroController.js"></script>
+    <script src="<?=base_url()?>recursos/js/controller/accederController.js"></script>
   </head>
   </body >
 
@@ -110,13 +110,15 @@
 
                 <div class="large-6 columns">
                    <h3 class="left">Acceder</h3>
-                  <form name="form_registro" ng-controller="registroController"  ng-submit="submit()" >
+                  <form name="form_registro" ng-controller="accederController"  ng-submit="submit()" >
 
           
 
                     <div class="row">
                       <div class="medium-12 colums">
                         <input type="email" name="correo" placeholder="ejemplo@dominio.com" ng-model="usuario.correo" required>
+                          <span ng-show="form_registro.email.$error.email">El correo es incorrecto</span>
+
                       </div>
                     </div>
 
@@ -128,6 +130,13 @@
                     </div>
                     
                     <input type="submit" ng-disabled="form_registro.correo.$invalid && form_registro.contrasena.$invalid" class="button radius  expand" value="Acceder">
+                    
+                    <div class="row">
+                      <div class="medium-12 colums">
+                        <label class="error" for="">{{flash}}</label>
+                      </div>
+                    </div>
+
                   </form>
                 </div>
 

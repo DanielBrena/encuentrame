@@ -18,39 +18,79 @@ class Usuario extends CI_Controller {
 	}
 
 	public function acceso(){
-		$data = $this->input->post();
-		$resultado = $this->model_usuario($data);
+
+		$data      = $this->input->post();
+		$resultado = $this->model_usuario->acceso(
+													array(
+														'correo' => $data['correo'],
+														'contrasena' => $data['contrasena']
+														)
+													);
+
 		if($resultado){
 			$this->status = "success";
-			$this->msg = "Exito";
+			$this->msg    = "Exito";
 		}else{
 			$this->status = "error";
-			$this->msg = "Error";
+			$this->msg    = "Usuario no existente.";
 		}
 
 		echo json_encode(
 		
 			array(
-				
 				'server' => array(
 					'status' => $this->status,
-					'msg' => $this->msg)
+					'msg'    => $this->msg
 				)
+			)
 
 		);
 	}
 
 	public function registro(){
-		$data = $this->input->post();
-		//$resultado = $this->model_crud->insert("usuario",$data);
-		$resultado = true;
-		if($resultado){
-			$this->status = "success";
-			$this->msg = "Exito";
+		$data_input = $this->input->post();
+		
+		$data = array(
+			'usu_id'             => uniqid(),
+			'usu_nombre'         => $data_input['nombre'],
+			'usu_usuario'        => $data_input['usuario'],
+			'usu_correo'         => $data_input['correo'],
+			'usu_contrasena'     => $data_input['contrasena'],
+			'usu_fecha_creacion' => date("Y-m-d")
+		);
+
+		$validar = $this->model_usuario->validar_existente(
+											array(
+												'nombre' => $data_input["nombre"],
+												'usuario'=> $data_input['usuario'],
+												'correo' => $data_input['correo']
+												)
+											);
+		
+		if(!$validar){
+
+			try{
+
+				$resultado = $this->model_crud->insert("usuario",$data);
+				if($resultado){
+					$this->status = "success";
+					$this->msg    = "Exito";
+				}else{
+     
+					$this->status = "error";
+					$this->msg    = "No se pudo crear su usuario.";
+				}
+
+			}catch(Exception $e){
+				$this->status = "error";
+				$this->msg    = $e->getMessage();
+			}
+			
 		}else{
 			$this->status = "error";
-			$this->msg = "Error";
+			$this->msg    = "Usuario o correo ya existentes.";
 		}
+		
 
 		echo json_encode(
 		
@@ -58,10 +98,10 @@ class Usuario extends CI_Controller {
 				
 				'server' => array(
 					'status' => $this->status,
-					'msg' => $this->msg
+					'msg'    => $this->msg
 				),
 				'data' => array(
-					'data' => $data
+					'data' => ""
 				)
 			)
 				

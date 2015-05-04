@@ -15,8 +15,8 @@ class Model_usuario extends CI_Model {
 	@return bool Retorna si se encuentra ese usuario.
 	*/
 	public function acceso($usuario){
-		$this->db->where("usu_correo",$usuario["nombre"]);
-		$this->db->where("usu_clave",$usuario["clave"]);
+		$this->db->where("usu_correo",$usuario["correo"]);
+		$this->db->where("usu_contrasena",$usuario["contrasena"]);
 
 		$query = $this->db->get("usuario");
         if($query->num_rows() == 1){
@@ -26,6 +26,21 @@ class Model_usuario extends CI_Model {
         }
 
 	}
+
+	public function validar_existente($usuario){
+		$this->db->where("usu_nombre",$usuario["nombre"]);
+		$this->db->or_where("usu_usuario",$usuario["usuario"]);
+		$this->db->or_where("usu_correo",$usuario["correo"]);
+
+		$query = $this->db->get("usuario");
+        if($query->num_rows() == 1){
+            return true;
+        }else{
+            return false;
+        }
+	}
+
+
 
 }
 

@@ -119,13 +119,14 @@
                     
                     <div class="row">
                       <div class="medium-12 colums">
-                        <input type="text" placeholder="Usuario" ng-model="usuario.usuario" required>
+                        <input type="text" placeholder="Usuario" ng-minlength=5 ng-model="usuario.usuario" required>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="medium-12 colums">
-                        <input type="email" placeholder="ejemplo@dominio.com" ng-model="usuario.correo" required>
+                        <input type="email" name="email" placeholder="ejemplo@dominio.com" ng-model="usuario.correo" required>
+                         <span ng-show="form_registro.email.$error.email">El correo es incorrecto</span>
                       </div>
                     </div>
 
@@ -135,13 +136,16 @@
                       </div>
                     </div>
 
-                    <div class="row">
-                      <div class="medium-12 colums">
-                        <input type="password" placeholder="Contraseña" ng-model="usuario.contrasena2" required>
-                      </div>
-                    </div>
+                    
                     
                     <input type="submit" ng-disabled="form_registro.usuario.$invalid" class="button radius  expand" value="Registrarse">
+                    
+                    <div class="row">
+                      <div class="medium-12 colums">
+                        <label class="error" for="">{{flash}}</label>
+                      </div>
+                    </div>
+
                   </form>
                 </div>
 

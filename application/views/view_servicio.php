@@ -50,39 +50,77 @@
    <section ng-controller="servicioController" class="contenido">
      <div class="row">
        <div class="large-11 large-centered columns">
+
         <div class="row perfil">
-          <div class="large-6 large-centered columns">
-            <div class="logo">
-              <img class="th radius"src="<?=base_url()?>recursos/img/logo_servicio.png">
+
+          <div id="imagen_perfil">
+             <div class="large-6 large-centered columns">
+              <div class="logo">
+                <img class="th radius"src="<?=base_url()?>recursos/img/logo_servicio.png">
+              </div>
+              
             </div>
-            
           </div>
 
-          <div class="info">
+          <div id="informacion">
 
-            <div class="small-4 large-4 columns ">
-              <div class="text-center">
-                <h5 class="subheader">Visitas</h5>
-                <h3 class="subheader">2000</h3>
+            <div class="descripcion">
+              <div class="small-12 large-center columns box">
+                <div class="text-center">
+                  <h2 class="subheader">Cafeteria</h2>
+
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium laboriosam assumenda ut. Harum deleniti suscipit deserunt eum maxime accusantium neque tenetur beatae minima rerum modi nulla, at animi amet eveniet.</p>
+                </div>
               </div>
             </div>
 
-            <div class="small-4 large-4 columns ">
-              <div class="text-center">
-                <h5 class="subheader">Comentarios</h5>
-                <h3 class="subheader">100</h3>
-              </div>
+            <div class="estadisticas">
+               <div class="small-4 large-4 columns box">
+                  <div class="text-center">
+                    <h5 class="subheader">Visitas</h5>
+                    <h3 class="subheader">2000</h3>
+                  </div>
+                </div>
+
+                <div class="small-4 large-4 columns box">
+                  <div class="text-center">
+                    <h5 class="subheader">Comentarios</h5>
+                    <h3 class="subheader">100</h3>
+                  </div>
+                </div>
+
+                <div class="small-4 large-4 columns box">
+                  <div class="text-center">
+                    <h5 class="subheader">Rating</h5>
+                    <h3 class="subheader">500</h3>
+                  </div>
+                </div>
             </div>
 
-            <div class="small-4 large-4 columns ">
-              <div class="text-center">
-                <h5 class="subheader">Rating</h5>
-                <h3 class="subheader">500</h3>
+            <div class="personal">
+              <div class="small-12 large-center columns box">
+                 <ul>
+                  <li class="lista text-center box">
+                    <a href="http://www.google.com">http:www.google.com</a>
+                  </li>
+                  <li class="lista text-center">
+                    <a href="mailto:daniel_brena@outlook.com@example.com">daniel_brena@outlook.com</a>
+                  </li>
+                  <li class="lista text-center">
+                    <a href="tel:9511650590">9511650590</a>
+                  </li>
+                  <li class="lista text-center">informacion</li>
+                </ul>
               </div>
+             
             </div>
+
+            <div class="box"></div>
 
           </div>
+         
 
+        
           <div id="mapa">
             
           </div>

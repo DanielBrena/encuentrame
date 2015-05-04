@@ -15,7 +15,7 @@ class Servicio extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view('view_servicio');
+		$this->load->view('view_servicio2');
 	}
 
 	public function informacion(){
@@ -24,6 +24,10 @@ class Servicio extends CI_Controller {
 
 	public function productos(){
 		$this->load->view('view_servicio_producto');
+	}
+
+	public function busqueda(){
+		$this->load->view('view_busqueda');
 	}
 
 	public function agregar_servicio(){
