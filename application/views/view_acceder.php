@@ -117,7 +117,7 @@
                     <div class="row">
                       <div class="medium-12 colums">
                         <input type="email" name="correo" placeholder="ejemplo@dominio.com" ng-model="usuario.correo" required>
-                          <span ng-show="form_registro.email.$error.email">El correo es incorrecto</span>
+                          <span ng-show="form_registro.correo.$error.email">El correo es incorrecto</span>
 
                       </div>
                     </div>
@@ -129,7 +129,7 @@
                       </div>
                     </div>
                     
-                    <input type="submit" ng-disabled="form_registro.correo.$invalid && form_registro.contrasena.$invalid" class="button radius  expand" value="Acceder">
+                    <input type="submit" ng-disabled="form_registro.correo.$invalid" class="button radius  expand" value="Acceder">
                     
                     <div class="row">
                       <div class="medium-12 colums">

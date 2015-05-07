@@ -13,11 +13,19 @@ class Usuario extends CI_Controller {
 	}
 
 	public function index()
-	{
-		$this->load->view('view_administrador');
+	{	
+		if($this->session->userdata('logged_in')){
+			$this->load->view('view_administrador');
+		}else{
+			//$this->load->view('login');
+			redirect('/','refresh');
+		}
+
+		
 	}
 
 	public function acceso(){
+		
 
 		$data      = $this->input->post();
 		$resultado = $this->model_usuario->acceso(
@@ -27,7 +35,48 @@ class Usuario extends CI_Controller {
 														)
 													);
 
-		if($resultado){
+		if(!empty($resultado)){
+			
+
+			$session_array = array();
+
+			foreach ($resultado as $key) {
+				
+				$sesion_array = array(
+					'id'      => $key->usu_id,
+					'nombre'  => $key->usu_nombre,
+					'usuario' => $key->usu_usuario,
+					'correo'  => $key->usu_correo
+				);
+
+				$this->session->set_userdata('logged_in', $sesion_array);
+			}
+
+			$this->status = "success";
+			$this->msg    = "Exito";
+
+			
+		}else{
+			$this->status = "error";
+			$this->msg    = "Usuario no existente.";
+
+			
+			
+		}
+
+		echo json_encode(
+		
+				array(
+					'server' => array(
+						'status' => $this->status,
+						'msg'    => $this->msg
+						)
+					)
+
+			);
+		
+
+		/*if($resultado){
 			$this->status = "success";
 			$this->msg    = "Exito";
 		}else{
@@ -44,7 +93,13 @@ class Usuario extends CI_Controller {
 				)
 			)
 
-		);
+		);*/
+	}
+
+	public function logout(){
+	   $this->session->unset_userdata('logged_in');
+	   session_destroy();
+	   redirect('/', 'refresh');
 	}
 
 	public function registro(){

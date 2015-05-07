@@ -33,7 +33,7 @@
           <section class="top-bar-section">
             <ul id="menu"class="right">
                   
-                  <li class=""><a href="<?=base_url()?>principal/registro" class="button">Salir</a></li>
+                  <li class=""><a href="<?=base_url()?>usuario/logout" class="button">Salir</a></li>
                   
                   
                 </ul>

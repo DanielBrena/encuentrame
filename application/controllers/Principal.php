@@ -9,11 +9,24 @@ class Principal extends CI_Controller {
 	}
 
 	public function registro(){
-		$this->load->view('view_registro');
+		if($this->session->userdata('logged_in')){
+			redirect('/usuario','refresh');
+			//$this->load->view('view_administrador');
+		}else{
+			//$this->load->view('login');
+			$this->load->view('view_registro');
+		}
+
+		
 	}
 
 	public function acceder(){
-		$this->load->view('view_acceder');
+		if($this->session->userdata('logged_in')){
+			redirect('/usuario','refresh');
+		}else{
+			//$this->load->view('login');
+			$this->load->view('view_acceder');
+		}
 	}
 
 }

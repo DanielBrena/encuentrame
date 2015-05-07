@@ -20,7 +20,7 @@ app.factory("registroUsuario",function($http,mensajeFlash){
 	}
 });
 
-app.factory("accederUsuario",function($http,mensajeFlash){
+app.factory("accederUsuario",function($http,mensajeFlash,$window){
 	return {
 		acceder: function(usuario){
 			return $http(
@@ -34,7 +34,13 @@ app.factory("accederUsuario",function($http,mensajeFlash){
 				}
 			
 			}).success(function(data){
-				mensajeFlash.show(data.server.msg);
+				if(data.server.status === "success"){
+					$window.location.href = "http://localhost:8888/encuentrame/usuario";
+					
+				}else{
+					mensajeFlash.show(data.server.msg);
+				}
+				
 			}).error(function(data){
 				console.error(data);
 			});
