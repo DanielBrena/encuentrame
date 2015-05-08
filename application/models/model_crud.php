@@ -48,7 +48,7 @@ class Model_crud extends CI_Model {
 	@return Array Regresa los registros de la tabla.
 	*/
 	public function selectAll($table){
-		return $this->db->select->from($table)->get->result();
+		return $this->db->select()->from($table)->get()->result();
 		
 	}
 

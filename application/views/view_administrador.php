@@ -51,7 +51,7 @@
       </div>
       
     </section>
-    <section ng-controller="administradorController" class="contenido">
+    <section ng-controller="administradorControllerEvent" class="contenido">
       
       <div class="row">
         <div class="large-12 columns">
@@ -70,7 +70,7 @@
 
                 <div id="form_servicio" class="box" ng-show="form_ser">
                   <h6>Servicio</h6>
-                  <form action="">
+                  <form ng-submit="submit()" ng-controller="administradorController" >
                     
                     <div class="row">
 
@@ -85,19 +85,19 @@
                       </div>
 
                       <div class="small-12 columns">
-                        <input type="text" placeholder="Nombre del servicio">
+                        <input type="text" ng-model="servicio.nombre" placeholder="Nombre del servicio">
                       </div>
 
                       <div class="small-12 columns">
-                        <input type="text" placeholder="Codigo postal">
+                        <input type="text" ng-model="servicio.codigo_postal" placeholder="Codigo postal">
                       </div>
 
                       <div class="small-12 columns">
-                        <input type="text" placeholder="Ciudad / Estado">
+                        <input type="text" ng-model="servicio.ciudad" placeholder="Ciudad / Estado">
                       </div>
 
                       <div class="small-12 columns">
-                        <input type="text" placeholder="Telefono">
+                        <input type="text" ng-model="servicio.telefono" placeholder="Telefono">
                       </div>
                       
                       <div class="small-12 columns">

@@ -17,7 +17,6 @@ class Usuario extends CI_Controller {
 		if($this->session->userdata('logged_in')){
 			$this->load->view('view_administrador');
 		}else{
-			//$this->load->view('login');
 			redirect('/','refresh');
 		}
 

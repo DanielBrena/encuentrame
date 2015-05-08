@@ -58,3 +58,21 @@ app.factory("mensajeFlash",function($rootScope){
 		}
 	}
 });
+
+app.factory("categoriaServicio",function($http){
+	return{
+		getAll:function(){
+			return $http(
+			{
+				url 	: 	"http://localhost:8888/encuentrame/categoriaservicio/getall",
+				method 	: 	"GET",
+				headers: 
+				{
+					'Content-Type' 	:  'application/x-www-form-urlencoded'
+				}
+			
+			}) 
+		}
+	}
+});
+

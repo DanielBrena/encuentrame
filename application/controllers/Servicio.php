@@ -30,6 +30,10 @@ class Servicio extends CI_Controller {
 		$this->load->view('view_busqueda');
 	}
 
+	public function validar_nombre_servicio(){
+		$data = $this->input->post();
+		
+	}
 	public function agregar_servicio(){
 		$data = $this->input->post();
 
