@@ -3,11 +3,25 @@
   border-bottom: 2px solid rgb(231, 231, 231);
 }
 .contain-to-grid, .top-bar{
-  background: white;
+  background: #f9f9f9;
 }
 #menu li{
-  background: white;
+  background: #f9f9f9;
 }
 #titulo {
   color: #214055;;
+}
+.foundess_logo{
+	height: 45px;
+	padding: 2px;
+}
+
+#btn_registro{
+	background: #4c4c4c;
+	color: #ffffff;
+
+}
+#btn_acceder{
+	background: #b2dad5;
+	color: #ffffff;
 }

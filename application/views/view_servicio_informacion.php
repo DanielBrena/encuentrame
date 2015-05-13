@@ -62,12 +62,14 @@
       
     </section>
     
-    <section class="panel" ng-controller="servicioConfiguracionController">
+    <section ng-controller="servicioConfiguracionController" class="panel" >
       <div class="row">
+
         <div class="large-12 columns">
           <div class="row">
 
-            <form action="">
+            <form ng-submit="submit()">
+               <input type="hidden" ng-model="servicio.id" value="<?=$servicio[0]->ser_id?>">
               <div class="row">
                 <div class="small-6 small-centered columns">
                       <img class="th radius"src="<?=base_url()?>recursos/img/logo_servicio.png">
@@ -77,23 +79,24 @@
 
               <div class="row">
                 <div class="small-12 columns">
-                        <input type="text" placeholder="Nombre del servicio">
+                        <input type="text" ng-model="servicio.nombre" placeholder="Nombre del servicio" value="">
                 </div>
               </div>
 
 
               <div class="row">
                 <div class="small-12 columns">
-                    <textarea placeholder="Descripcion"></textarea>
+                    <textarea ng-model="servicio.descripcion" placeholder="Descripcion"></textarea>
                 </div>
               </div>
 
               <div class="row">
                 <div class="small-12 columns">
                     <label>Categoria
-                          <select>
-                            <option value="Cafeteria">Cafeteria</option>
-                            <option value="Papeleria">Papeleria</option>
+                         <select ng-init="foo = foo " ng-model="servicio.categoria"  ng-options="cs.cs_id as cs.cs_nombre for cs in categoria_servicios">
+                              <option value="" ng-if="foo">Selecciona uno.</option>
+                           
+                          
                            
                           </select>
                         </label>
@@ -104,7 +107,7 @@
 
               <div class="row">
                 <div class="small-12 columns">
-                        <input type="text" ng-model="servicio.clave" ng-keyup="crear_etiquetas()" placeholder="Palabras clave">
+                        <input type="text" ng-model="servicio.palabras_clave" value="" ng-keyup="crear_etiquetas()" placeholder="Palabras clave">
                 </div>
               </div>
 
@@ -115,13 +118,12 @@
                         <span ng-class-odd="'label success etiqueta'"  ng-class-even="'label etiqueta'" >{{e}}</span>
                     
                   </div>
-                  
-
+                
                     
                 </div>
               </div>
 
-              <input type="submit" ng-disabled="form_registro.usuario.$invalid" class="button radius  expand" value="Registrarse">
+              <input type="submit" ng-disabled="form_registro.usuario.$invalid" class="button radius  expand" value="Actualizar">
 
                
 
@@ -134,7 +136,7 @@
     
     <section >
        <div class="row" >
-        <div ng-controller="servicioConfiguracionController" id="mapa"></div>
+        <div id="mapa"></div>
        </div>
       
     </section>
@@ -144,7 +146,7 @@
           <div  class="large-11 large-centered columns">
             <div class="row collapse">
               <div class="small-10 columns">
-                <input type="text" id="inp_search"  placeholder="Busca tú ubicación">
+                <input type="text" id="inp_search" ng-model="buscar"  placeholder="Busca tú ubicación">
               </div>
               <div class="small-2 columns">
                 <a href="#"  id="btn_search" class="button secondary postfix fi-magnifying-glass size-72">

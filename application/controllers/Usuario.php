@@ -15,7 +15,10 @@ class Usuario extends CI_Controller {
 	public function index()
 	{	
 		if($this->session->userdata('logged_in')){
-			$this->load->view('view_administrador');
+
+			$data["categorias"] =$this->model_crud->selectAll("categoria_servicio");
+			
+			$this->load->view('view_administrador',$data);
 		}else{
 			redirect('/','refresh');
 		}

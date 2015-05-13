@@ -70,38 +70,40 @@
 
                 <div id="form_servicio" class="box" ng-show="form_ser">
                   <h6>Servicio</h6>
-                  <form ng-submit="submit()" ng-controller="administradorController" >
+                  <form name="form_service" ng-submit="submit()" ng-controller="administradorController" >
                     
                     <div class="row">
 
                       <div class="small-12 columns">
                         <label>Selecciona la categoria
-                          <select>
-                            <option value="Cafeteria">Cafeteria</option>
-                            <option value="Papeleria">Papeleria</option>
+                          <select ng-init="foo = foo || cs[0]" ng-model="servicio.categoria"  ng-options="cs.cs_id as cs.cs_nombre for cs in categoria_servicios">
+                              <option value="" ng-if="foo">Selecciona uno.</option>
+                           
+                          
                            
                           </select>
                         </label>
                       </div>
 
                       <div class="small-12 columns">
-                        <input type="text" ng-model="servicio.nombre" placeholder="Nombre del servicio">
+                        <input type="text" name="nombre" ng-keyup="validar_nombre()" ng-minlength=3  ng-model="servicio.nombre" placeholder="Nombre del servicio" required>
+                       <small ng-show="valido">El nombre ya esta en uso.</small>
                       </div>
 
                       <div class="small-12 columns">
-                        <input type="text" ng-model="servicio.codigo_postal" placeholder="Codigo postal">
+                        <input type="text" name="codigo_postal" ng-model="servicio.codigo_postal" placeholder="Codigo postal" required>
                       </div>
 
                       <div class="small-12 columns">
-                        <input type="text" ng-model="servicio.ciudad" placeholder="Ciudad / Estado">
+                        <input type="text"  name="estado" ng-model="servicio.ciudad" placeholder="Ciudad / Estado"   required>
                       </div>
 
                       <div class="small-12 columns">
-                        <input type="text" ng-model="servicio.telefono" placeholder="Telefono">
+                        <input type="number" name="telefono" ng-model="servicio.telefono" placeholder="Telefono"  required>
                       </div>
                       
                       <div class="small-12 columns">
-                        <input type="submit" class="button radius  expand" value="Iniciar">
+                        <input type="submit" ng-disabled="valido || form_service.nombre.$invalid ||   form_service.estado.$invalid" class="button radius  expand" value="Iniciar">
                       </div>
 
 

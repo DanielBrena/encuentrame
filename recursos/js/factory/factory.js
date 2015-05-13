@@ -59,6 +59,59 @@ app.factory("mensajeFlash",function($rootScope){
 	}
 });
 
+app.factory("factoryServicio",function($http,$window){
+	return{
+		agregar: function(servicio){
+			return $http(
+				{
+					url:"http://localhost:8888/encuentrame/servicio/agregar_servicio",
+					method:"POST",
+					data:$.param(servicio),
+					headers: 
+					{
+						'Content-Type' : 'application/x-www-form-urlencoded'
+					}
+				}
+			).success(function(data){
+				if(data.server.status === "success"){
+					
+					$window.location.href = "http://localhost:8888/encuentrame/servicio/informacion/"+data.app.id;
+					
+				}else{
+					mensajeFlash.show(data.server.msg);
+				}
+			}).error(function(data){
+				console.error(data);
+			});
+		},
+		selectById: function(servicio){
+			return $http(
+				{
+					url:"http://localhost:8888/encuentrame/servicio/selectById",
+					method:"POST",
+					data:$.param(servicio),
+					headers: 
+					{
+						'Content-Type' : 'application/x-www-form-urlencoded'
+					}
+				}
+			)
+		},
+		actualizar: function(servicio){
+			return $http(
+				{
+					url:"http://localhost:8888/encuentrame/servicio/update_servicio",
+					method:"POST",
+					data:$.param(servicio),
+					headers: 
+					{
+						'Content-Type' : 'application/x-www-form-urlencoded'
+					}
+				}
+			)
+		}
+	}
+});
 app.factory("categoriaServicio",function($http){
 	return{
 		getAll:function(){
@@ -71,8 +124,22 @@ app.factory("categoriaServicio",function($http){
 					'Content-Type' 	:  'application/x-www-form-urlencoded'
 				}
 			
-			}) 
+			}); 
+		},
+		validName:function(servicio){
+			return $http(
+			{
+				url 	: 	"http://localhost:8888/encuentrame/servicio/validar_nombre_servicio",
+				method 	: 	"POST",
+				data    : 	$.param(servicio),
+				headers: 
+				{
+					'Content-Type' 	:  'application/x-www-form-urlencoded'
+				}
+			
+			})
 		}
+
 	}
 });
 

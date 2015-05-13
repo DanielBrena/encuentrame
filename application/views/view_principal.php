@@ -27,7 +27,11 @@
         <nav class="top-bar" data-topbar>
           <ul class="title-area">
             <li class="name">
-              <h1><a id="titulo"href="<?php echo base_url(); ?>">Encuentrame</a></h1>
+              <h1>
+                <a id="titulo"href="<?php echo base_url(); ?>">
+                  <img class="foundess_logo" src="<?=base_url()?>recursos/img/logo_svg.svg" alt="">
+                 </a>
+              </h1>
             </li>
             <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
           </ul>
@@ -35,10 +39,10 @@
           <section class="top-bar-section">
             <ul id="menu"class="right">
               <li class="">
-                  <a href="<?=base_url()?>principal/registro" class="button">Registrate</a>
+                  <a href="<?=base_url()?>principal/registro" id="btn_registro" class="button ">Registrate</a>
               </li>
               <li class="active">
-                <a href="<?=base_url()?>principal/acceder"  class="button success">Acceder</a>
+                <a href="<?=base_url()?>principal/acceder" id="btn_acceder" class="button success ">Acceder</a>
               </li>
             </ul>
           </section>
